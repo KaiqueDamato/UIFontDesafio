@@ -16,12 +16,25 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (IBAction)mudarFont:(id)sender {
+    UIButton *btn = (UIButton *)sender;
+    [_label setFont:[UIFont fontWithName:[btn titleLabel].text size:17]];
+}
+
+- (IBAction)alterarNome:(UIButton *)sender {
+    [_label setText:[_textField text]];
+    [_textField resignFirstResponder];
+}
+
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    [_textField resignFirstResponder];
 }
 
 @end
